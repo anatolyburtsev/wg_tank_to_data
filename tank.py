@@ -31,6 +31,7 @@ class Tank:
     weight = 0
     density_power = 0
     tier = 0
+    description = ""
 
     gun = gun.Gun()
     turret = turret.Turret()
@@ -62,6 +63,7 @@ class Tank:
         self.nation_rus = nation_dict[self.nation]
         self.images = self.raw_data["images"]["normal"]
         self.tier = self.raw_data["tier"]
+        self.description = self.raw_data["description"]
         self.type = self.raw_data["type"]
         self.type_rus = type_dict[self.type]
 
@@ -82,8 +84,10 @@ ID - {}
 Тип - {}
 Прочность - {} HP
 Вес - {} кг
+Описание: {}
 
-        """.format(self.name, self.tank_id, self.images,  self.tier, self.nation_rus, self.type_rus, self.hp, self.weight)
+        """.format(self.name, self.tank_id, self.images,
+                   self.tier, self.nation_rus, self.type_rus, self.hp, self.weight, self.description)
 
         speed_info = """
 Удельная мощность - {} лс/т
