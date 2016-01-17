@@ -10,6 +10,12 @@ class Shell:
     type_rus = ""
     damage = 0
 
+    def __init__(self):
+        self.penetration = 0
+        self.type = ""
+        self.type_rus = ""
+        self.damage = 0
+
     def fill_fields(self, json_response):
         self.penetration = json_response["penetration"]
         self.type = json_response["type"]
@@ -27,7 +33,10 @@ class Shell:
 
 class Shells:
 
-    shells = []
+    shells = None
+
+    def __init__(self):
+        self.shells = []
 
     def fill_fields(self, json_response):
         shells_data = json_response["shells"]

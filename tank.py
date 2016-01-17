@@ -43,6 +43,8 @@ class Tank:
     def __init__(self, tank_id):
         assert str(tank_id).isdigit()
         self.tank_id = str(tank_id)
+        self.shells = shells.Shells()
+        self.armor = armor.Armor()
 
     def fetch_info(self):
         self.raw_data = wg_api.get_tanks_info(self.tank_id)
@@ -73,6 +75,7 @@ class Tank:
     def __str__(self):
         main_info = """
 Танк: {}
+ID - {}
 Изображение - {}
 Уровень - {}
 Нация - {}
@@ -80,7 +83,7 @@ class Tank:
 Прочность - {} HP
 Вес - {} кг
 
-        """.format(self.name, self.images,  self.tier, self.nation_rus, self.type_rus, self.hp, self.weight)
+        """.format(self.name, self.tank_id, self.images,  self.tier, self.nation_rus, self.type_rus, self.hp, self.weight)
 
         speed_info = """
 Удельная мощность - {} лс/т

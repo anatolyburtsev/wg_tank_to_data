@@ -1,11 +1,18 @@
 import json
 from pprint import pprint
 
+
 class TurretArmor:
     is_exist = False
     front = 0
     sides = 0
     rear = 0
+
+    def __init__(self):
+        self.is_exist = False
+        self.front = 0
+        self.sides = 0
+        self.rear = 0
 
     def __str__(self):
         result = """
@@ -22,6 +29,11 @@ class HullArmor:
     sides = 0
     rear = 0
 
+    def __init__(self):
+        self.front = 0
+        self.sides = 0
+        self.rear = 0
+
     def __str__(self):
         result = """
 Корпус:
@@ -33,8 +45,12 @@ class HullArmor:
 
 
 class Armor:
-    turret = TurretArmor()
-    hull = HullArmor()
+    turret = None
+    hull = None
+
+    def __init__(self):
+        self.turret = TurretArmor()
+        self.hull = HullArmor()
 
     def fill_fields(self, json_response):
         armor_data = json_response["armor"]
