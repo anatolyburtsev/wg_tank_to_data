@@ -10,7 +10,7 @@ import tank
 app = Flask(__name__)
 
 
-@app.route("/tanks_and_ids")
+@app.route("/")
 def tanks_and_ids():
     tanks = wg_api.get_tanks_and_ids()
     api_version = wg_api.get_api_version()
@@ -27,5 +27,5 @@ def tanks_data(tank_id):
 
 
 if __name__ == "__main__":
-    app.debug
-    app.run(host='0.0.0.0', port=8080)
+    # app.debug
+    app.run(host='0.0.0.0', port=8000)
