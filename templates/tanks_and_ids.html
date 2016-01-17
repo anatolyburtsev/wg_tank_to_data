@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tanks and IDs</title>
+</head>
+<body>
+
+Версия WG API: {{wg_api_version}} <br/>
+Список доступных танков:<br/>
+
+<ul id="tanks">
+    {% for tank in tanks_data %}
+        <li><a href="/tanks_data/{{ tank.tank_id }}">{{ tank.name }}</a></li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

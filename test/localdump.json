@@ -1,0 +1,122 @@
+{
+    "status": "ok",
+    "meta": {
+        "count": 1
+    },
+    "data": {
+        "305": {
+            "suspensions": [
+                306
+            ],
+            "description": "Разработка машины была начата в 1957 году. Танк представлял собой облегчённую копию танка Type 59 и предназначался для участия в боевых действиях в южных районах страны в условиях гористой и заболоченной местности. Первый прототип был построен в 1962 году. В дальнейшем танк прошёл несколько модернизаций.",
+            "engines": [
+                309
+            ],
+            "prices_xp": null,
+            "next_tanks": null,
+            "nation": "china",
+            "is_premium": true,
+            "images": {
+                "preview": "http://wotblitz.ru/dcont/2.35.0_rf910a2e0afe9a1ca57abae9d88565e4864a8aa8d/tankopedia/china/Ch02_Type62_preview.png",
+                "normal": "http://wotblitz.ru/dcont/2.35.0_rf910a2e0afe9a1ca57abae9d88565e4864a8aa8d/tankopedia/china/Ch02_Type62.png"
+            },
+            "cost": null,
+            "default_profile": {
+                "weight": 21000,
+                "firepower": 54,
+                "shot_efficiency": 59,
+                "gun_id": 308,
+                "signal_range": 500,
+                "shells": [
+                    {
+                        "penetration": 145,
+                        "type": "ARMOR_PIERCING",
+                        "damage": 180
+                    },
+                    {
+                        "penetration": 250,
+                        "type": "HOLLOW_CHARGE",
+                        "damage": 180
+                    },
+                    {
+                        "penetration": 43,
+                        "type": "HIGH_EXPLOSIVE",
+                        "damage": 300
+                    }
+                ],
+                "armor": {
+                    "turret": {
+                        "front": 45,
+                        "sides": 35,
+                        "rear": 20
+                    },
+                    "hull": {
+                        "front": 35,
+                        "sides": 20,
+                        "rear": 20
+                    }
+                },
+                "speed_forward": 60,
+                "speed_backward": 23,
+                "engine": {
+                    "tier": 5,
+                    "fire_chance": 0.12,
+                    "power": 430,
+                    "name": "NORINCO 12150L3",
+                    "weight": 700
+                },
+                "max_ammo": 47,
+                "engine_id": 309,
+                "hp": 1040,
+                "is_default": true,
+                "protection": 27,
+                "suspension": {
+                    "tier": 7,
+                    "load_limit": 24000,
+                    "traverse_speed": 58,
+                    "name": "Type 62",
+                    "weight": 5500
+                },
+                "suspension_id": 306,
+                "max_weight": 24000,
+                "gun": {
+                    "move_down_arc": 7,
+                    "caliber": 85,
+                    "name": "85 mm Type 62",
+                    "weight": 1650,
+                    "move_up_arc": 20,
+                    "fire_rate": 10.53,
+                    "dispersion": 0.37,
+                    "traverse_speed": 39.38,
+                    "reload_time": 5.7,
+                    "tier": 7,
+                    "aim_time": 2.1
+                },
+                "turret_id": 307,
+                "turret": {
+                    "name": "Type 62",
+                    "weight": 5000,
+                    "view_range": 260,
+                    "hp": 208,
+                    "traverse_speed": 48,
+                    "traverse_right_arc": 180,
+                    "tier": 7,
+                    "traverse_left_arc": 180
+                },
+                "maneuverability": 83,
+                "hull_weight": 7860,
+                "hull_hp": 832
+            },
+            "tier": 7,
+            "tank_id": 305,
+            "type": "lightTank",
+            "guns": [
+                308
+            ],
+            "turrets": [
+                307
+            ],
+            "name": "Type 62"
+        }
+    }
+}

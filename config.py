@@ -1,0 +1,1 @@
+wargaming_id = "77636487a299e95a72583de66dba7a63"
