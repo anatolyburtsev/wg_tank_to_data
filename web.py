@@ -6,15 +6,26 @@ from flask import abort
 import time
 import wg_api
 import tank
+import sql_api
 
 app = Flask(__name__)
 
 
-@app.route("/")
+@app.route("/old_style")
 def tanks_and_ids():
     tanks = wg_api.get_tanks_and_ids()
     api_version = wg_api.get_api_version()
     return render_template("tanks_and_ids.html", wg_api_version=api_version, tanks_data=tanks)
+
+
+@app.route("/")
+def tanks_by_nation():
+    # tanks_raw = wg_api.get_raw_vehicle()
+    t = sql_api.TanksDB()
+
+    return render_template("tanks_by_nation.html", ussr_tanks_data=t.ussr(), usa_tanks_data=t.usa(),
+                           uk_tanks_data=t.uk(), germany_tanks_data=t.germany(), china_tanks_data=t.china(),
+                           japan_tanks_data=t.japan())
 
 
 @app.route("/tanks_data/<tank_id>")

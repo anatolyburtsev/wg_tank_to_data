@@ -10,6 +10,7 @@ type_dict = {"lightTank": "Легкий танк", "mediumTank": "Средний
 nation_dict = {"ussr": "СССР", "usa": "США", "germany": "Германия", "uk": "Англия", "japan": "Япония",
                "china": "Китай"}
 
+
 class Tank:
 
     tank_id = ""

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tanks by nation</title>
+</head>
+<body>
+Версия WG API: {{wg_api_version}} <br/>
+Список доступных танков:<br/><br/>
+<table>
+    <tr>
+        <td valign="top">
+        USSR<br/><br/>
+        {% for tank in ussr_tanks_data %}
+            <a href="/tanks_data/{{ tank.tank_id }}">{{ tank.name }}</a><br/>
+        {% endfor %}
+        </td>
+        <td valign="top">
+        USA<br/><br/>
+        {% for tank in usa_tanks_data %}
+            <a href="/tanks_data/{{ tank.tank_id }}">{{ tank.name }}</a><br/>
+        {% endfor %}
+        </td>
+        <td valign="top">
+        UK<br/><br/>
+        {% for tank in uk_tanks_data %}
+            <a href="/tanks_data/{{ tank.tank_id }}">{{ tank.name }}</a><br/>
+        {% endfor %}
+        </td>
+        <td valign="top">
+        GERMANY<br/><br/>
+        {% for tank in germany_tanks_data %}
+            <a href="/tanks_data/{{ tank.tank_id }}">{{ tank.name }}</a><br/>
+        {% endfor %}
+        </td>
+        <td valign="top">
+        CHINA<br/><br/>
+        {% for tank in china_tanks_data %}
+            <a href="/tanks_data/{{ tank.tank_id }}">{{ tank.name }}</a><br/>
+        {% endfor %}
+        </td>
+        <td valign="top">
+        JAPAN<br/><br/>
+        {% for tank in japan_tanks_data %}
+            <a href="/tanks_data/{{ tank.tank_id }}">{{ tank.name }}</a><br/>
+        {% endfor %}
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>

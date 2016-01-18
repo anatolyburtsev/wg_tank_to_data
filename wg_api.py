@@ -3,6 +3,10 @@ import config
 import logging
 
 
+class WGAPIException(Exception):
+    pass
+
+
 class TankNameId:
     name = ""
     tank_id = ""
@@ -10,6 +14,10 @@ class TankNameId:
     def __init__(self, name, tank_id):
         self.name = name
         self.tank_id = tank_id
+
+    def __str__(self):
+        result = """id: {}, name: {}""".format(self.tank_id, self.name)
+        return result
 
 
 def get_tanks_info(tank_id):
@@ -53,6 +61,20 @@ def get_tanks_and_ids():
     return result
 
 
+def get_raw_vehicle():
+    req = "https://api.wotblitz.ru/wotb/encyclopedia/vehicles/?application_id={}".format(
+        config.wargaming_id
+    )
+
+    response = requests.get(req).json()
+    try:
+        if response["status"] != "ok":
+            raise WGAPIException
+    except KeyError:
+        logging.error("Couldn't json response for all tanks")
+        raise
+    return response
+
 def get_api_version():
     req = "https://api.wotblitz.ru/wotb/encyclopedia/info/?application_id={}".format(config.wargaming_id)
     response = requests.get(req).json()
@@ -69,4 +91,5 @@ if __name__ == "__main__":
     print(get_tanks_info(65329))
     print(get_api_version())
     print(get_tanks_and_ids())
+    print(get_raw_vehicle())
 
