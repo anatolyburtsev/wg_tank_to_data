@@ -21,9 +21,9 @@ def tanks_and_ids():
 @app.route("/")
 def tanks_by_nation():
     # tanks_raw = wg_api.get_raw_vehicle()
-    t = sql_api.TanksDB()
-
-    return render_template("tanks_by_nation.html", ussr_tanks_data=t.ussr(), usa_tanks_data=t.usa(),
+    api_version = wg_api.get_api_version()
+    t = sql_api.TanksDB(api_version)
+    return render_template("tanks_by_nation.html", wg_api_version=api_version, ussr_tanks_data=t.ussr(), usa_tanks_data=t.usa(),
                            uk_tanks_data=t.uk(), germany_tanks_data=t.germany(), china_tanks_data=t.china(),
                            japan_tanks_data=t.japan())
 

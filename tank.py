@@ -40,8 +40,6 @@ class Tank:
     armor = armor.Armor()
     shells = shells.Shells()
 
-
-
     def __init__(self, tank_id):
         assert str(tank_id).isdigit()
         self.tank_id = str(tank_id)

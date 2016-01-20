@@ -1,20 +1,29 @@
 import sqlite3
 import json
 import wg_api
+import os
 
 
 class TanksDB:
     db_name = ""
+    api_version = 0
     conn_db = None
     curs_db = None
 
-    def __init__(self, db_name="tank_db"):
+    def __init__(self, api_version=False, db_name="tank_db"):
         assert len(db_name.split(".")) < 2
-        self.db_name = db_name.split(".")[0]
+        if not api_version:
+            api_version = wg_api.get_api_version()
+        self.api_version = str(api_version).replace(".","")
+        self.db_name = db_name.split(".")[0] + "_" + str(self.api_version)
 
     def init_connection(self):
-        self.conn_db = sqlite3.connect(self.db_name + ".sqlite3")
+        db_filename = self.db_name + ".sqlite3"
+        self.conn_db = sqlite3.connect(db_filename)
         self.curs_db = self.conn_db.cursor()
+        if not os._exists( db_filename):
+            self.init_db()
+            self.refill_db_from_wg_api()
 
     def init_db(self):
         if not self.conn_db or not self.curs_db:
@@ -101,11 +110,10 @@ if __name__ == "__main__":
     #     data = json.load(data_file)
     # data = wg_api.get_raw_vehicle()
     t = TanksDB()
-    t.init_db()
-    t.refill_db_from_wg_api()
+    # t.init_db()
+    # t.refill_db_from_wg_api()
     # t._TanksDB__nation("ussr")
-    # a = t.ussr()
+    a = t.ussr()
     # b = t.all()
-    # print(a[0])
+    print(a[0])
     # print(b)
-
